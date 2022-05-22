@@ -27,4 +27,8 @@ public class Product {
     @Version
     @Column(name = "version", nullable = false, columnDefinition = "int default 0")
     protected Integer version;
+
+    @Version
+    @Column(name = "versiontest", nullable = false, columnDefinition = "int default 0")
+    protected Integer versiontest;
 }

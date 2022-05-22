@@ -5,6 +5,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/masterkapyedu
     username: postgres
     password: postgres
+    outputChangeLogFile: src/main/resources/liquibase-outputChangeLog.xml
   jpa:
     properties:
       hibernate:
@@ -16,13 +17,6 @@ multitenancy:
   schema-cache:
     maximumSize: 100
     expireAfterAccess: 10
-  master:
-    repository:
-      packages: com.example.kapyedu.multitenancy.repository
-    entityManager:
-      packages: com.example.kapyedu.multitenancy.domain
-    liquibase:
-      changeLog: classpath:db/changelog/db.changelog-master.yaml
   tenant:
     repository:
       packages: com.example.kapyedu.repository
@@ -30,3 +24,10 @@ multitenancy:
       packages: com.example.kapyedu.domain
     liquibase:
       changeLog: classpath:db/changelog/db.changelog-tenant.yaml
+  master:
+    repository:
+      packages: com.example.kapyedu.multitenancy.repository
+    entityManager:
+      packages: com.example.kapyedu.multitenancy.domain
+    liquibase:
+      changeLog: classpath:db/changelog/db.changelog-master.yaml
