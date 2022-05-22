@@ -1,9 +1,7 @@
 package com.example.kapyedu.multitenancy.repository;
 
-import com.example.kapyedu.multitenancy.entity.Tenant;
+import com.example.kapyedu.multitenancy.domain.entity.Tenant;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 

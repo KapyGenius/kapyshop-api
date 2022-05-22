@@ -1,6 +1,6 @@
 package com.example.kapyedu.multitenancy.service;
 
-import com.example.kapyedu.multitenancy.entity.Tenant;
+import com.example.kapyedu.multitenancy.domain.entity.Tenant;
 import com.example.kapyedu.multitenancy.repository.TenantRepository;
 import liquibase.exception.LiquibaseException;
 import liquibase.integration.spring.SpringLiquibase;

@@ -1,4 +1,4 @@
-package com.example.kapyedu.multitenancy.entity;
+package com.example.kapyedu.multitenancy.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package com.example.kapyedu.multitenancy.config.hibernate;
 
-import com.example.kapyedu.multitenancy.entity.Tenant;
+import com.example.kapyedu.multitenancy.domain.entity.Tenant;
 import com.example.kapyedu.multitenancy.repository.TenantRepository;
 import com.github.benmanes.caffeine.cache.CacheLoader;
 import com.github.benmanes.caffeine.cache.Caffeine;

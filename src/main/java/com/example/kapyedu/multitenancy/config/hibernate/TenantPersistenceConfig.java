@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.SpringBeanContainer;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -21,6 +23,12 @@ import javax.persistence.EntityManagerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+@Configuration
+@EnableJpaRepositories(
+        basePackages = {"${multitenancy.tenant.repository.packages}"},
+        entityManagerFactoryRef = "tenantEntityManagerFactory",
+        transactionManagerRef = "tenantTransactionManager"
+)
 public class TenantPersistenceConfig {
 
     private final ConfigurableListableBeanFactory beanFactory;
