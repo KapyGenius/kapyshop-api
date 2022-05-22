@@ -55,6 +55,25 @@ public class DynamicSchemaBasedMultiTenantSpringLiquibase implements Initializin
     protected SpringLiquibase getSpringLiquibase(DataSource dataSource, String schema) {
         SpringLiquibase liquibase = new SpringLiquibase();
         liquibase.setResourceLoader(getResourceLoader());
+        liquibase.setDataSource(dataSource);
+        liquibase.setDefaultSchema(schema);
+        if (liquibaseProperties.getParameters() != null) {
+            liquibaseProperties.getParameters().put("schema", schema);
+            liquibase.setChangeLogParameters(liquibaseProperties.getParameters());
+        } else {
+            liquibase.setChangeLogParameters(Collections.singletonMap("schema", schema));
+        }
+        liquibase.setChangeLog(liquibaseProperties.getChangeLog());
+        liquibase.setContexts(liquibaseProperties.getContexts());
+        liquibase.setLiquibaseSchema(liquibaseProperties.getLiquibaseSchema());
+        liquibase.setLiquibaseTablespace(liquibaseProperties.getLiquibaseTablespace());
+        liquibase.setDatabaseChangeLogTable(liquibaseProperties.getDatabaseChangeLogTable());
+        liquibase.setDatabaseChangeLogLockTable(liquibaseProperties.getDatabaseChangeLogLockTable());
+        liquibase.setDropFirst(liquibaseProperties.isDropFirst());
+        liquibase.setShouldRun(liquibaseProperties.isEnabled());
+        liquibase.setLabels(liquibaseProperties.getLabels());
+        liquibase.setRollbackFile(liquibaseProperties.getRollbackFile());
+        liquibase.setTestRollbackOnUpdate(liquibaseProperties.isTestRollbackOnUpdate());
         return liquibase;
     }
 

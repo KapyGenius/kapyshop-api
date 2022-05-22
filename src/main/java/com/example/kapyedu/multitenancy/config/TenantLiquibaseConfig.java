@@ -17,8 +17,6 @@ import javax.sql.DataSource;
 @ConditionalOnProperty(name = "multitenancy.tenant.liquibase.enabled", havingValue = "true", matchIfMissing = true)
 public class TenantLiquibaseConfig {
 
-
-
     @Bean
     public DynamicSchemaBasedMultiTenantSpringLiquibase tenantLiquibase(
             TenantRepository masterTenantRepository,
