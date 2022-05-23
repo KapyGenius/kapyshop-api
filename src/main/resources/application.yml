@@ -5,7 +5,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/masterkapyedu
     username: postgres
     password: postgres
+    driver: org.postgresql.Driver
     outputChangeLogFile: src/main/resources/liquibase-outputChangeLog.xml
+    changeLogFile: src/main/resources/liquibase-outputChangeLog.xml
+    referenceUrl: hibernate:spring:com.example.kapyedu?dialect=org.hibernate.dialect.PostgreSQLDialect
+    diffChangeLogFile: src/main/resources/liquibase-diff-changeLog.xml
   jpa:
     properties:
       hibernate:
@@ -23,11 +27,11 @@ multitenancy:
     entityManager:
       packages: com.example.kapyedu.domain
     liquibase:
-      changeLog: classpath:db/changelog/db.changelog-tenant.yaml
+      changeLog: classpath:db/changelog/db.changelog-tenant.xml
   master:
     repository:
       packages: com.example.kapyedu.multitenancy.repository
     entityManager:
       packages: com.example.kapyedu.multitenancy.domain
     liquibase:
-      changeLog: classpath:db/changelog/db.changelog-master.yaml
+      changeLog: classpath:db/changelog/db.changelog-master.xml
