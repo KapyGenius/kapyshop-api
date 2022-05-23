@@ -6,29 +6,4 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
    http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <include file="db/changelog/db.changelog-tenant-1.0.xml" />
-    <changeSet author="DonaldKapyouo (generated)" id="1653261338668-1">
-        <createTable tableName="product">
-            <column autoIncrement="true" name="id" type="BIGINT">
-                <constraints primaryKey="true" primaryKeyName="productPK"/>
-            </column>
-            <column name="name" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="version" type="INT default 0">
-                <constraints nullable="false"/>
-            </column>
-            <column name="versiontest" type="INT default 0">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-    <changeSet author="DonaldKapyouo (generated)" id="1653261338668-2">
-        <addUniqueConstraint columnNames="id" constraintName="UC_PRODUCTID_COL" tableName="product"/>
-    </changeSet>
-    <changeSet author="DonaldKapyouo (generated)" id="1653261338668-2">
-        <sql dbms="postgresql" >
-            ALTER SEQUENCE ${schema}.product_id_seq RESTART WITH 100000;
-        </sql>
-    </changeSet>
 </databaseChangeLog>

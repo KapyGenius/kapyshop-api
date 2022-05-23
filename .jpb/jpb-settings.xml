@@ -8,4 +8,8 @@
       </database-info>
     </database-infos>
   </component>
+  <component name="JpaLiquibaseChangesConfig">
+    <exclude-change idName="tenant#tenant_id" tagName="modifyDataType" />
+    <exclude-change idName="tenant#schema" tagName="modifyDataType" />
+  </component>
 </project>

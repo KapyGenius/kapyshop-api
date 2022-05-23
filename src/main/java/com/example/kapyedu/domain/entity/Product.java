@@ -24,6 +24,11 @@ public class Product {
     @Size(max = 255)
     private String name;
 
+    //@Column(name = "preis", nullable = false, columnDefinition = "int default 0")
+    //@NotNull
+    //@Size(max = 255)
+    //private Integer preis;
+
     @Version
     @Column(name = "version", nullable = false, columnDefinition = "int default 0")
     protected Integer version;
