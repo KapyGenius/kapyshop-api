@@ -5,7 +5,7 @@ COPY pom.xml /usr/src/kapyshop-api
 RUN mvn -f /usr/src/kapyshop-api/pom.xml clean package
 
 FROM openjdk:11
-COPY --from=build /usr/src/kapyshop-api/target/kapyshop-0.0.1-SNAPSHOT.jar /usr/kapyshop-api/kapyshop-0.0.1-SNAPSHOT.jar
+COPY --from=build /usr/src/kapyshop-api/target/kapyedu-0.0.1-SNAPSHOT.jar /usr/kapyshop-api/kapyshop-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/usr/kapyshop-api/kapyedu-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/kapyshop-api/kapyshop-0.0.1-SNAPSHOT.jar"]
