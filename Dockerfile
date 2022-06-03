@@ -8,4 +8,4 @@ FROM openjdk:11
 COPY --from=build /usr/src/kapyshop-api/target/kapyshop-0.0.1-SNAPSHOT.jar /usr/kapyshop-api/kapyshop-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/usr/kapyshop-api/kapyshop-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/kapyshop-api/kapyedu-0.0.1-SNAPSHOT.jar"]
