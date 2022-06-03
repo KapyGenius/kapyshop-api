@@ -15,7 +15,7 @@ public class KapyshopApplication {
 
 	@GetMapping
 	public String welcome(){
-		return "<h1> Welcome To KapyShop API Platform <small> powered by <a href='https://kapygenius.com'>KapyGenius</a> </small> </h1>";
+		return "<h1> Welcome To KapyShop API Platform <small> powered by <a href='https://kapygenius.com'>KapyGenius</a> 😉😎. </small> </h1>";
 	}
 
 }
