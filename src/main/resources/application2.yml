@@ -2,9 +2,9 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://${KAPYEDU_DB_URL:db-kapygenius-do-user-11721060-0.b.db.ondigitalocean.com:25060/kapyshop}
-    username: ${KAPYEDU_DB_USER:doadmin}
-    password: ${KAPYEDU_DB_PASS:AVNS_BuTvpDI7OSJlK00}
+    url: jdbc:postgresql://localhost:5432/masterkapyshop
+    username: postgres
+    password: postgres
     driver: org.postgresql.Driver
     outputChangeLogFile: src/main/resources/liquibase-outputChangeLog.xml
     changeLogFile: src/main/resources/liquibase-outputChangeLog.xml

@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
@@ -22,6 +23,7 @@ public class LiquibaseConfig {
     private String masterSchema;
 
     @Bean
+    @Primary
     @ConfigurationProperties("multitenancy.master.liquibase")
     public LiquibaseProperties masterLiquibaseProperties() {
         return new LiquibaseProperties();
